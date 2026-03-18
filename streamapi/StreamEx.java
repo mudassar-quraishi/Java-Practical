@@ -10,6 +10,11 @@ public class StreamEx {
        ArrayList<Integer> list = new ArrayList<>();
        list.addAll(data);
        System.out.println(list);
-       Stream listStream = data.stream();
+       Stream listStream = list.stream();
+       list.stream().filter(n-> n>60).forEach(System.out::println);
+       List<Integer> newList = list.stream().filter(n-> n>50&& n<70).toList();
+       List<Integer> newList2 = list.stream().filter(n-> n>50&& n<70).collect(Collectors.toList());
+
+
     }
 }
