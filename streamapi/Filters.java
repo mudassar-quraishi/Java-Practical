@@ -2,13 +2,24 @@ package streamapi;
 import java.util.*;
 
 class Student{
-    String name;
-    int marks;
+    private String name;
+    private int marks;
     Student(String name, int marks){
         this.name=name;
         this.marks=marks;
     }
+    public String getName(){
+        return name;
+    }
+    public int getMarks(){
+        return marks;
+    }
+    @Override
+    public String toString(){
+    return "Student [name =" + name + " marks = "+ marks+ "]";
+    }
 }
+
 
 public class Filters {
     public static void main(String[] args) {
@@ -49,7 +60,7 @@ public class Filters {
         list6.add(new Student("Sohan", 70));
         list6.add(new Student("Rohan", 80));
 
-        list6.stream().filter((Student name)-> name.marks>60).forEach((Student n)->System.out.println(n.name + " " + n.marks));
+        list6.stream().filter(Student->Student.getMarks()>60).forEach(System.out::println);
 
         }
 }
