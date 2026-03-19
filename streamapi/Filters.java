@@ -1,4 +1,4 @@
-//package streamapi;
+package streamapi;
 import java.util.*;
 
 class Student{
