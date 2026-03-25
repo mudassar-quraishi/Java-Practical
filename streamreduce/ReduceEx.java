@@ -1,6 +1,7 @@
 //package streamreduce;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class ReduceEx {
     public static void main(String[] args){
@@ -36,6 +37,23 @@ public class ReduceEx {
         int squaredSum = numbers.stream().reduce(0, (a,b)-> b*b +a);
         System.out.println(squaredSum);
 
+        //Second highest
+        int firstHighest = list.stream().reduce(1, (a,b)-> a>b ? a: b);
+        int secondHighest = list.stream().reduce(1, (a, b) -> a>b && a<firstHighest ? a : b);
+        System.out.println(secondHighest);
+
+        //find the longest string using reduce()
+        String longest = list1.stream().reduce("", (a,b) -> a.length()>b.length() ? a : b);
+        System.out.println(longest);
+
+        //find average
+        int result5 = list.stream().reduce(0, (a,b) -> (a+b))/list.size();
+        System.out.println(result5);
+
+        //find factorial using reduce()
+        int n = 5;
+        int fact = IntStream.rangeClosed(1, n).reduce(1, (a,b) -> a*b);
+        System.out.println(fact);
     }
     
 }
