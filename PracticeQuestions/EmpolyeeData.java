@@ -1,4 +1,4 @@
-package PracticeQuestions;
+//package PracticeQuestions;
 
 import java.util.*;
 
@@ -48,7 +48,9 @@ public class EmpolyeeData {
     Employee empMax = empList.stream().max(Comparator.comparing(Employee::getSalary)).get();
     System.out.println(empMax);
 
-
+    //Youngest employee 
+    Employee youngestEmp = empList.stream().min(Comparator.comparing(Employee::getAge)).get();
+    System.out.println(youngestEmp);              
     }
 }
 
