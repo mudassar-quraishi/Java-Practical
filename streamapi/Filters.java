@@ -20,7 +20,6 @@ class Student{
     }
 }
 
-
 public class Filters {
     public static void main(String[] args) {
         // Check & print even number
