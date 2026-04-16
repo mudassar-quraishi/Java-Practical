@@ -30,19 +30,9 @@ public class SavePointEx {
                     """);
             sp2 = con.setSavepoint("Update");
             smt.executeUpdate("""
-                    delete from student where name=="Student3"
+                    delete from student where name="Student3"
                     """);  
             con.commit();          
-            // con.setAutoCommit(true);
-            // System.out.println("ID\tName\t\tCourse\t\tMarks");
-            // while (rs.next()) {
-            //     int id = rs.getInt("id");
-            //     String name = rs.getString("name");
-            //     String course = rs.getString("course");
-            //     long marks = rs.getLong("marks");
-            //     System.out.println(
-            //             String.format("%d\t%s\t%s\t\t%d", id, name, course, marks));
-            // }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             try{
