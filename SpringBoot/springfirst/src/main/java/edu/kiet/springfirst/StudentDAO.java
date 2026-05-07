@@ -1,0 +1,7 @@
+package edu.kiet.springfirst;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StudentDAO extends JpaRepository<Student, Long>{
+    
+}
